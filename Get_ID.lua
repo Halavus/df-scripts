@@ -1,0 +1,1 @@
+print(dfhack.gui.getSelectedBuilding(true).id)

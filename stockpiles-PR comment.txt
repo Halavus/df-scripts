@@ -1,0 +1,23 @@
+New Feature:
+Upon exporting a stockpile settings, a new popup window one step before the "Please enter a filename" has been added.
+This handles the quite neat stockpiles --include option that is available since many years, but absent from the UI.
+The feature could certainly be improved further (enable/disable completely or save settings locally, etc.)
+
+Comments/issues:
+
+Features:
+-Default is containers: false all others: true
+Whereas stockpiles does set all to true if no --include is specified.
+This is my personnal prefered behavior (and the reason why I made this feature). In my latest playthroughs I have observed issues where imported stockpile settings - with for example 64 max bins set on a 3x3 stockpile - would prevent the dwarves from ever starting to haul to this stockpile.
+
+- The import code (not modified at all in this PR) could potentially(?) be improved by avoiding setting more containers than there is room in the stockpile. Couldn't find the related df.pointer or how to compute this value yet.
+
+- TODO: toggle enable/disable the feature
+
+- TODO: Save user settings locally (in /dfhack-config/stockpiles ?)
+
+- The original code is getting a bit cranked with all the UI elements. There is an unavailable gui/stockpiles piece of code that approximately did what the new UI does. I'm wondering if all the UI elements of script/stockpiles should be moved to and replace the old gui/stockpiles. Or make a new structure.
+(I'm not yet confident enough to achieve this myself)
+
+
+
